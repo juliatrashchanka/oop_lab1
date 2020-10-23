@@ -15,7 +15,7 @@ public:
 	
 	Array(int N);
 	~Array();
-	int change(Array&, Array&, int, int);
+ friend void change(Array&, Array&, int, int);
 	void AddEl();
 	void print();
 	int funk1();
@@ -63,7 +63,7 @@ int Array::funk2() {
 	return  imin;
 
 }
-int Array::change (Array& m1, Array& m2, int imax, int imin){
+void change (Array& m1, Array& m2, int imax, int imin){
 	
 	int t;
 	
@@ -74,7 +74,6 @@ int Array::change (Array& m1, Array& m2, int imax, int imin){
 	m1.print();
 	cout << "Второй массив: " << endl;
 	m2.print();
-	return 0;
 	}
 	
 void Array::AddEl() {
@@ -104,8 +103,7 @@ int main() {
 	
 	int imin =	m2.funk2();
 
-	 
-	 change (m1, m2, imax, imin);
+    change(m1, m2, imax, imin);
 
 	system("pause");
 	return 0;
